@@ -1,92 +1,29 @@
 <div align="center">
 
-# AI Chat Library for Arduino <br> 🤖💬
+# Arduino AI Chat Library — upstream-derived working copy
 
-
-![GitHub](https://img.shields.io/github/license/bayeggex/Arduino-AI-Chat-Library)
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/bayeggex/Arduino-AI-Chat-Library?include_prereleases)
-[![PlatformIO Registry](https://badges.registry.platformio.org/packages/bayeggex/library/AIChatBot.svg)](https://registry.platformio.org/libraries/bayeggex/AIChatBot)
-[![arduino-library-badge](https://www.ardu-badge.com/badge/AIChatBot.svg?)](https://www.ardu-badge.com/AIChatBot)
-![GitHub last commit](https://img.shields.io/github/last-commit/bayeggex/Arduino-AI-Chat-Library)
-![GitHub issues](https://img.shields.io/github/issues-raw/bayeggex/Arduino-AI-Chat-Library)
+`UPSTREAM_DERIVED` · `BASE AUTHORSHIP NOT CLAIMED`
 
 </div>
 
-![tenor](https://github.com/bayeggex/Arduino-AI-Chat-Library/assets/79448667/ae4451d4-2c67-43bd-b8c7-e378960c33d1)
+This repository is retained as a working/reference copy of the upstream Arduino AI chat library.
 
+**Official upstream:** https://github.com/bayeggex/Arduino-AI-Chat-Library
 
-AIChatbot is a versatile Arduino library for integrating various AI chatbot APIs. It supports connecting to OpenAI's ChatGPT, Hugging Face Api's.
+The base library, documentation and primary authorship belong to the upstream project and contributors. Hawkar does **not** claim authorship of that base code.
 
-## ✨ Features
+## How to evaluate this repository
 
-- **Versatile AI Integration**: Integrate various AI chatbot APIs seamlessly into your Arduino projects.
-- **Supports Multiple APIs**: Connect to OpenAI's ChatGPT, Hugging Face APIs, and more with ease.
-- **Easy Setup**: Simple API key configuration and setup for quick deployment.
-- **Real-time Interaction**: Handle real-time messages and responses over WiFi.
-- **Flexible AI Selection**: Choose between different AI versions such as "gpt-3.5-turbo","gpt-4" (more will be integrated)
-- **Community-driven**: Contributions and improvements from the community are welcomed and encouraged.
+Any Hawkar-specific work should be evaluated only as an explicit diff against a corresponding upstream revision.
 
-## 🔧Installation
+- Attribution notice: [`UPSTREAM_MIRROR_NOTICE.md`](UPSTREAM_MIRROR_NOTICE.md)
+- Machine-readable status: [`PROJECT_STATUS.json`](PROJECT_STATUS.json)
+- Official documentation/history: [upstream repository](https://github.com/bayeggex/Arduino-AI-Chat-Library)
 
-1. **Download the Library**: Download or clone this repository.
-
-2. **Import into Arduino IDE**:
-   - Open Arduino IDE.
-   - Go to **Sketch > Include Library > Add .ZIP Library...** and select the downloaded ZIP file.
-
-3. **Dependencies**:
-   - This library requires the `WiFi` and `HTTPClient` libraries for making HTTP requests. Make sure to install these libraries through the Library Manager in Arduino IDE if not already installed.
-
-## 🚀Usage
-
-### Setting Up AI Keys
-
-Before using the AIChatbot library, you need to set your API keys for the respective AI services. You can do this in your sketch code:
-
-```cpp
-#include <AIChatbot.h>
-
-AIChatbot chatbot;
-
-void setup() {
-    chatbot.begin(115200);
-    
-    // Set API keys
-    chatbot.setKey("YOUR_CHATGPT_API_KEY", "chatgpt");
-    chatbot.setKey("YOUR_HUGGING_FACE_API_KEY", "huggingface");
-
-    // Connect to WiFi
-    if (!chatbot.connectWiFi("SSID", "PASSWORD")) {
-        Serial.println("Failed to connect to WiFi");
-        while (true); // Halt if WiFi connection fails
-    }
-    
-    // Select AI service and optionally specify version
-    chatbot.selectAI("chatgpt", "gpt-3.5-turbo");
-}
-
-void loop() {
-    // Update and handle incoming messages
-    chatbot.update();
-}
+```text
+PORTFOLIO_CLASS = UPSTREAM_DERIVED_WORKING_COPY
+BASE_AUTHORSHIP_CLAIMED_BY_HAWKAR = FALSE
+FLAGSHIP_HAWKAR_RESEARCH = FALSE
 ```
-## 🤝 Contributing
-Contributions are welcome! To contribute to AIChatbot, fork this repository, make improvements, and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
 
-    Fork the repository.
-    Create a new branch: git checkout -b feature/amazing-feature
-    Commit your changes: git commit -m 'Add some amazing feature'
-    Push to the branch: git push origin feature/amazing-feature
-    Open a pull request.
-
-## 📚 Documentation
-
-For detailed documentation, please refer to [Docs.md](./Docs.md).
-
-## 📄 License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
-If you find this project helpful or interesting, don't forget to give it a star! ⭐
-
-Express yourself freely and elevate your chat experience with Arduino-AI-Chat-Library! 😊
+API/provider compatibility may change over time; use the upstream documentation and current provider documentation when deploying.
